@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051233202417",
+    "project_id": "dummyglein",
+    "storage_bucket": "dummyglein.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051233202417:android:9c01559196674024fa3950",
+        "android_client_info": {
+          "package_name": "com.example.glein"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051233202417-q01enls9u596kuioo730sddkdjgnd5gk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK8uiYjy1zmFXclhW1OzN4m4KfjJ03-3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051233202417-q01enls9u596kuioo730sddkdjgnd5gk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,94 @@
+if (searchfilter.text.isEmpty) {
+                          return ListTile(
+                            title: Text(name),
+                            subtitle: Row(
+                              children: [
+                                const Text('Mobile no. '),
+                                Text(snapshot
+                                    .child('Mobile No')
+                                    .value
+                                    .toString()),
+                              ],
+                            ),
+                            trailing: PopupMenuButton(
+                              icon: const Icon(
+                                Icons.more_vert,
+                                color: Colors.black,
+                              ),
+                              itemBuilder: (context) => [
+                                PopupMenuItem(
+                                    value: 1,
+                                    onTap: () {
+                                      Future.delayed(
+                                          const Duration(milliseconds: 100),
+                                          () async {
+                                        await showMydialog(
+                                            name,
+                                            snapshot
+                                                .child('Id')
+                                                .value
+                                                .toString());
+                                      });
+                                    },
+                                    child: const ListTile(
+                                      leading: Icon(Icons.edit),
+                                      title: Text('Edit'),
+                                    )),
+                                PopupMenuItem(
+                                    onTap: () {
+                                      Future.delayed(
+                                          const Duration(milliseconds: 100),
+                                          () async {
+                                        await showMydialog1(snapshot
+                                            .child('Id')
+                                            .value
+                                            .toString());
+                                      });
+                                    },
+                                    value: 1,
+                                    child: const ListTile(
+                                      leading: Icon(Icons.delete),
+                                      title: Text('Delete'),
+                                    )),
+                              ],
+                            ),
+                          );
+                        } else if (name.toLowerCase().contains(
+                            searchfilter.text.toLowerCase().toLowerCase())) {
+                          return ListTile(
+                              title:
+                                  Text(snapshot.child('Name').value.toString()),
+                              subtitle: Row(
+                                children: [
+                                  const Text('Mobile no. '),
+                                  Text(snapshot
+                                      .child('Mobile No')
+                                      .value
+                                      .toString()),
+                                ],
+                              ),
+                              trailing: PopupMenuButton(
+                                icon: const Icon(
+                                  Icons.more_vert,
+                                  color: Colors.black,
+                                ),
+                                itemBuilder: (context) => [
+                                  const PopupMenuItem(
+                                      value: 1,
+                                      child: ListTile(
+                                        leading: Icon(Icons.edit),
+                                        title: Text('Edit'),
+                                      )),
+                                  const PopupMenuItem(
+                                      value: 1,
+                                      child: ListTile(
+                                        leading: Icon(Icons.delete),
+                                        title: Text('Delete'),
+                                      )),
+                                ],
+                              ));
+                        } else {
+                          return Container();
+                          // const Center(
+                          //     child: Text("No profile with that name"));
+                        }
